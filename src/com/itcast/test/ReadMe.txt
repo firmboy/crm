@@ -35,4 +35,7 @@
 		1.在dao层要利用HibernateTemplate来和数据库交互，所以要获取到HibernateTemplate
 		我们为了操作方便，需要dao层继承HibernateDaoSupport，这样我们在创建dao对象时，直接向它
 		注入sessionFactory即可
+六、注意：
+	1.导入UI界面后会报错，是因为缺少jstl标签的jar包
+		1.导入jstl标签的jar包
 	
