@@ -16,7 +16,7 @@ public class TestDemo {
 	
 	
 	/**
-	 * 
+	 * 测试 Hibernate框架、Spring整合Hibernate框架
 	 */
 	@Test
 	public void test2(){

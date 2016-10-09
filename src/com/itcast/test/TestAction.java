@@ -22,7 +22,9 @@ public class TestAction extends ActionSupport {
 	public String test() {
 		System.out.println(this);
 		System.out.println("hello");
-		service.save();
+		User user = new User();
+		user.setName("玛利亚");
+		service.save(user);
 		return null;
 	}
 	

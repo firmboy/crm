@@ -25,5 +25,14 @@
 	3.编写一个持久类（javaBean+映射文件）
 	4.在TestDemo中编写一个测试hibernate的测试方法，创建一个user对象，调用service的方法保存对象
 五、Spring整合hibernate框架
-	1.
+	1.将sessionFactory交给Spring框架创建
+		1.将hibernate文件中的c3p0连接池交给Spring框架创建
+		2.创建LocalSessionFactoryBean来创建sessiongFactory这个对象
+	2.将事务交给Spring管理
+		1.创建事务管理器
+		2.开启事务注解扫描，在service层添加事务注解
+	3.注意事项：
+		1.在dao层要利用HibernateTemplate来和数据库交互，所以要获取到HibernateTemplate
+		我们为了操作方便，需要dao层继承HibernateDaoSupport，这样我们在创建dao对象时，直接向它
+		注入sessionFactory即可
 	
