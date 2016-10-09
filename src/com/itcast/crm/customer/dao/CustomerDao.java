@@ -1,5 +1,7 @@
 package com.itcast.crm.customer.dao;
 
+import java.util.List;
+
 import com.itcast.crm.customer.domain.Customer;
 
 public interface CustomerDao {
@@ -7,5 +9,7 @@ public interface CustomerDao {
 	void save(Customer customer);
 
 	Customer findByIdForLoad(Customer customer);
+
+	List<Customer> findAll();
 
 }
