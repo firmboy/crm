@@ -19,4 +19,10 @@
 		<property name="dao" ref="testDao" />
 	</bean>
 	
+	<!-- 创建Aop类 -->
+	<bean id="aop" class="com.itcast.test.Aop"></bean>
+	<!-- 开启aop注解扫描 -->
+	<aop:aspectj-autoproxy/>
+	
+	
 </beans>

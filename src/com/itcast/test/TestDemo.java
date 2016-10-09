@@ -15,8 +15,9 @@ public class TestDemo {
 	private TestService service;
 	
 	
+	
 	/**
-	 * 测试Spring的IOC功能
+	 * 测试Spring的IOC功能和Aop功能
 	 */
 	@Test
 	public void test1(){

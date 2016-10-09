@@ -10,4 +10,5 @@
 	2.导入applicationContext.xml配置文件
 	3.创建TestServiceImpl和TestDaoImpl类及其接口，并编写一个测试类TestDemo
 	4.测试Spring的IOC功能
+	5.编写一个Aop类，测试Spring的AOP功能
 	
