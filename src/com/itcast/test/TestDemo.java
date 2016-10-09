@@ -15,6 +15,15 @@ public class TestDemo {
 	private TestService service;
 	
 	
+	/**
+	 * 
+	 */
+	@Test
+	public void test2(){
+		User user = new User();
+		user.setName("小泽");
+		service.save(user);
+	}
 	
 	/**
 	 * 测试Spring的IOC功能和Aop功能

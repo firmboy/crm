@@ -19,4 +19,11 @@
 	2.在web.xml文件中加入Spring的一个监听器，监听ServletContext的创建，这样在项目启动时，Spring会创建
 	一个xmlWebApplicationContext类作为IOC容器来读取我们配置的applicationContext.xml文件并将IOC
 	容器放到ServletContext中
+四.Hibernate框架环境测试
+	1.导入heibernate的jar包
+	2.导入hibernate的核心配置文件
+	3.编写一个持久类（javaBean+映射文件）
+	4.在TestDemo中编写一个测试hibernate的测试方法，创建一个user对象，调用service的方法保存对象
+五、Spring整合hibernate框架
+	1.
 	
