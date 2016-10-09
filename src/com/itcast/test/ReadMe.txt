@@ -11,4 +11,12 @@
 	3.创建TestServiceImpl和TestDaoImpl类及其接口，并编写一个测试类TestDemo
 	4.测试Spring的IOC功能
 	5.编写一个Aop类，测试Spring的AOP功能
+三、Spring整合Struts2框架
+	1.将Action对象交给Spring框架创建
+		注意：1.Action在Spring的配置文件配置时，一定要配置成多例
+			2.在Struts2的配置文件中，Action的配置的class改为在applicationContext中的id值
+			3.在使用Spring的IOC的注解方式时，一定要在applicationContext中开启注解扫描<context:component-scan base-package="com.itcast.test" />
+	2.在web.xml文件中加入Spring的一个监听器，监听ServletContext的创建，这样在项目启动时，Spring会创建
+	一个xmlWebApplicationContext类作为IOC容器来读取我们配置的applicationContext.xml文件并将IOC
+	容器放到ServletContext中
 	

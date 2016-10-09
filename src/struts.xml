@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package name="Test" namespace="/" extends="struts-default">
-		<action name="test_*" class="com.itcast.test.TestAction" method="{1}">
+		<action name="test_*" class="testAction" method="{1}">
 		</action>	
 	</package>
 </struts>

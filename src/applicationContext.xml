@@ -12,11 +12,16 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
+   	<context:component-scan base-package="com.itcast.test" />
    
 	<bean id="testDao" class="com.itcast.test.TestDaoImpl"></bean>
 	
 	<bean id="testService" class="com.itcast.test.TestServiceImpl">
 		<property name="dao" ref="testDao" />
+	</bean>
+	
+	<bean id="testAction" class="com.itcast.test.TestAction" scope="prototype">
+ 		<property name="service" ref="testService" /> 
 	</bean>
 	
 	<!-- 创建Aop类 -->
