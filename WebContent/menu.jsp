@@ -130,7 +130,7 @@ A.active {
 											cellPadding=2 width=155 align=center border=0>
 											<TBODY>
 												<TR>
-													<TD class=menuSmall><A class=style2 href="customerServlet?method=add" 
+													<TD class=menuSmall><A class=style2 href="customer_initAdd.action" 
 														target=main>－ 新增客户</A></TD>
 												</TR>
 												<TR> 

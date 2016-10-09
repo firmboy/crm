@@ -12,7 +12,9 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
-   	<context:component-scan base-package="com.itcast.test" />
+   	<context:component-scan base-package="com.itcast" />
+   
+   <!-- 框架测试区 -->
    
 	<bean id="testDao" class="com.itcast.test.TestDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
@@ -26,6 +28,19 @@
  		<property name="service" ref="testService" /> 
 	</bean>
 	
+	<!-- 客户模块 -->
+	<bean id="customer" class="com.itcast.crm.customer.domain.Customer" />
+	
+	<bean id="customerAction" class="com.itcast.crm.customer.web.CustomerAction" scope="prototype">
+	</bean>
+	
+	<bean id="customerService" class="com.itcast.crm.customer.service.impl.CustomerServiceImpl">
+	</bean>
+	
+	<bean id="customerDao" class="com.itcast.crm.customer.dao.impl.CustomerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 	<!-- 创建Aop类 -->
 	<bean id="aop" class="com.itcast.test.Aop"></bean>
 	<!-- 开启aop注解扫描 -->
@@ -35,7 +50,7 @@
 	<!-- 1.创建一个连接池 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-		<property name="jdbcUrl" value="jdbc:mysql:///jdbcTemplate"></property>
+		<property name="jdbcUrl" value="jdbc:mysql:///crm"></property>
 		<property name="user" value="root"></property>
 		<property name="password" value="123"></property>
 	</bean>
@@ -54,6 +69,7 @@
 		<property name="mappingResources">
 			<array>
 				<value>com/itcast/test/user.hbm.xml</value>
+				<value>com/itcast/crm/customer/domain/customer.hbm.xml</value>
 			</array>
 		</property>
 	</bean>

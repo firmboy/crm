@@ -7,4 +7,10 @@
 		<action name="test_*" class="testAction" method="{1}">
 		</action>	
 	</package>
+	
+	<package name="Customer" namespace="/" extends="struts-default">
+		<action name="customer_*" class="customerAction" method="{1}">
+			<result name="initAdd">/jsp/customer/add.jsp</result>
+		</action>
+	</package>
 </struts>

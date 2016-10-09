@@ -38,4 +38,23 @@
 六、注意：
 	1.导入UI界面后会报错，是因为缺少jstl标签的jar包
 		1.导入jstl标签的jar包
+	2.做一个添加客户界面跳转的测试
+	3.做添加一个客户的测试
+	4.关于懒加载问题的解决
+		1.no session问题出现的原因
+			我们的session是在service层创建的，并且事务提交实在service层提交的，当事务调教后，session就已经
+			关闭，如果我们使用的是懒加载，那么我们在web层获取对象的其他属性时，才会去数据库查询，这时session已经
+			关闭了，不能查询了。
+		2.解决思路：
+			将session的创建和事务提交提前到web层，这样在web层使用懒加载的时候，session就可以获取到。
+		3.步骤：在web.xml文件中配置一个过滤器就可以了，注意
+			过滤器一定要配置在Struts2的核心过滤器之前
+			<filter>
+				<filter-name>OpenSessionInViewFilter</filter-name>
+				<filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
+			</filter>
+			<filter-mapping>
+				<filter-name>OpenSessionInViewFilter</filter-name>
+				<url-pattern>/*</url-pattern>
+			</filter-mapping>
 	
